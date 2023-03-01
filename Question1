@@ -1,4 +1,4 @@
-GET HOSTNAME
+### GET HOSTNAME ###
 import java.net.URL;
 import java.util.Scanner;
 public class URLgetHostExample1{
@@ -9,8 +9,10 @@ System.out.println("The given hostname is : "+hostname);
 System.out.println("Host name in given url is : "+hostname.getHost());
  }
 }
-Screenshot 1
-GET TIMESTAMP
+
+#Screenshot 1
+
+### GET TIMESTAMP ###
 import java.sql.Timestamp; 
 import java.util.Date; 
  public class TimestampToDateExample2 { 
@@ -20,4 +22,5 @@ import java.util.Date;
  System.out.println(updatedate); 
  } 
 } 
-Screenshot 2
+
+#Screenshot 2
