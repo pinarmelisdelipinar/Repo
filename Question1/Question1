@@ -1,1 +1,26 @@
-Deneme
+### GET HOSTNAME ###
+import java.net.URL;
+import java.util.Scanner;
+public class URLgetHostExample1{
+public static void main(String args[])throws Exception
+{
+URL hostname=new URL("https://www.melisdelipinar.com");
+System.out.println("The given hostname is : "+hostname);
+System.out.println("Host name in given url is : "+hostname.getHost());
+ }
+}
+
+#Screenshot 1
+
+### GET TIMESTAMP ###
+import java.sql.Timestamp; 
+import java.util.Date; 
+ public class TimestampToDateExample2 { 
+ public static void main(String args[]){ 
+ Timestamp timestamp=new Timestamp(System.currentTimeMillis()); 
+ Date updatedate=timestamp; 
+ System.out.println(updatedate); 
+ } 
+} 
+
+#Screenshot 2
