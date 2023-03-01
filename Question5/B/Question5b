@@ -1,0 +1,30 @@
+b) Make your image small
+Images that share layers and are smaller in size are faster to transfer and distribute.
+ 1. Squash multiple layers into one with multi-stage Docker builds.
+Dockerfile1 :
+FROM ubuntu 
+RUN apt-get update && apt-get install vim 
+Dockerfile2 : 
+FROM ubuntu 
+RUN apt-get update 
+RUN apt-get install vim
+COPY, ADD and RUN statements add a new layer to your image. Dockerfile2 example created two layers 
+instead of just one. 
+2. Remove unnecessary shells from the container with distroless
+"Distroless" images contain application and its runtime dependencies. There's no shell in the 
+container. Fewer binaries means smaller sizes and more security. The difficulty of debugging 
+increases.
+3. Alpine-Smaller base images
+Distroless base image replace with an Alpine based image. Alpine Linux Is a security-oriented, 
+lightweight Linux distribution
+If you are working in a production environment and need a high level of security, it would be better 
+to use distroless images.
+If you want to use size smaller image, you should switch to Alpine based images.
+4. Using Dockerignore
+Only necessary files need to be copied onto the Docker image. Docker can ignore files located in the
+working directory if configured in the .dockerignore file.
+5. Keep Application Data Elsewhere 
+Storing the application data in the image will increase the size of the images. It will be healthier to 
+keep the image separate from the data, for this the volume property of the container runtime can 
+be used.
+6. Caching
